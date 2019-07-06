@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  backend:
+    image: ex23_backend
+    container_name: ex25_back
+    environment:
+      - REDIS=redis
+      - REDIS_PORT=6379
+    ports:
+      - 8000:8000
+    depends_on:
+      - redis
+  frontend:
+    image: ex23_frontend
+    container_name: ex25_front
+    ports:
+      - 5000:5000
+    depends_on: 
+      - backend
+  redis:
+    image: redis
+    container_name: ex25_redis

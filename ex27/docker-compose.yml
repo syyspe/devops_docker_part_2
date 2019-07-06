@@ -1,0 +1,38 @@
+version: '3.7'
+
+services:
+  training:
+    build: ./ml-kurkkumopo-training
+    volumes:
+      - imgs:/src/imgs
+      - data:/src/data
+      - model:/src/model
+    container_name: ex27_training
+  backend:
+    build: ./ml-kurkkumopo-backend
+    volumes:
+      - model:/src/model
+    ports:
+      - 5000:5000
+    container_name: ex27_backend
+  frontend:
+    build: ./ml-kurkkumopo-frontend
+    ports:
+      - 3000:3000
+    container_name: ex27_frontend
+volumes:
+  imgs:
+    driver_opts:
+      type: none
+      device: ${PWD}/imgs #Create folder manually if necessary
+      o: bind
+  data:
+    driver_opts:
+      type: none
+      device: ${PWD}/data #Create folder manually if necessary
+      o: bind
+  model:
+    driver_opts:
+      type: none
+      device: ${PWD}/model #Create folder manually if necessary
+      o: bind

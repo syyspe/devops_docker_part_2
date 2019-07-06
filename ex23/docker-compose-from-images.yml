@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  backend:
+    image: ex23_backend
+    container_name: ex23_back
+    ports:
+      - 8000:8000
+  frontend:
+    image: ex23_frontend
+    container_name: ex23_front
+    ports:
+      - 5000:5000
+    depends_on: 
+      - backend

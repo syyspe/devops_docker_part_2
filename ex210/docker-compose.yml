@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  backend:
+    image: ex23_backend
+    container_name: ex210_back
+    environment:
+      - REDIS=redis
+      - REDIS_PORT=6379
+      - DB_USERNAME=ex210
+      - DB_PASSWORD=
+      - DB_NAME=ex210
+      - DB_HOST=db
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+      - redis
+  frontend:
+    image: ex23_frontend
+    container_name: ex210_front
+    ports:
+      - 5000:5000
+    depends_on: 
+      - backend
+  redis:
+    image: redis
+    container_name: ex210_redis
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=ex210
+      - POSTGRES_PASSWORD=
+      - POSTGRES_DB=ex210
+    volumes:
+      - /home/syyspe/data:/var/lib/postgresql/data
+    container_name: ex210_psql
+  nginx:
+    image: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+    container_name: ex210_nginx
+    depends_on:
+      - frontend
+      - backend

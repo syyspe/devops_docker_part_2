@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  backend:
+    image: ex23_backend
+    container_name: ex26_back
+    environment:
+      - REDIS=redis
+      - REDIS_PORT=6379
+      - DB_USERNAME=ex25
+      - DB_PASSWORD=
+      - DB_NAME=ex25
+      - DB_HOST=db
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+      - redis
+  frontend:
+    image: ex23_frontend
+    container_name: ex26_front
+    ports:
+      - 5000:5000
+    depends_on: 
+      - backend
+  redis:
+    image: redis
+    container_name: ex26_redis
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=ex25
+      - POSTGRES_PASSWORD=
+      - POSTGRES_DB=ex25
+    container_name: ex26_psql
