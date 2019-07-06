@@ -64,7 +64,7 @@ syyspe@debian95:/mnt/devt/DevOps/part2/ex22$
 ## Excercise 2.3
 [Up](#excercises)
 
-### Dockerfiles in folder [ex23](ex23)
+### docker-compose.yml in folder [ex23](ex23)
 
 I had already deleted the backend and frontend images and code from part 1, so what I did was I created directories  
 backend and frontend, copied respective dockerfiles to those directories from part 1, pulled the code again from git,  
@@ -121,7 +121,7 @@ have used curl etc to test from vm.
 ## Excercise 2.5
 [Up](#excercises)
 
-### Dockerfile in folder [ex25](ex25)
+### docker-compose.yml in folder [ex25](ex25)
 
 Working! It took 0.195 seconds.  
 
@@ -130,12 +130,12 @@ ex25_back   | Got from redis pong
 ## Excercise 2.6
 [Up](#excercises)
 
-### Dockerfile in folder [ex26](ex26)
+### docker-compose.yml in folder [ex26](ex26)
 
 ## Excercise 2.7
 [Up](#excercises)
 
-### Dockerfile in folder [ex27](ex27)
+### docker-compose.yml in folder [ex27](ex27)
 
 Required defining Python interpreter with shebang in backend/app.py,  
 otherwise crashed on subprocess creation after model became available.   
@@ -146,7 +146,7 @@ I created local folders for the volumes so that it was easier to follow progress
 ## Excercise 2.8
 [Up](#excercises)
 
-### Dockerfile in folder [ex28](ex28)
+### docker-compose.yml in folder [ex28](ex28)
 ### NOTE: define db password!
 
 Exercise 2.8 button: Working! 
@@ -154,7 +154,7 @@ Exercise 2.8 button: Working!
 ## Excercise 2.9
 [Up](#excercises)
 
-### Dockerfile in folder [ex29](ex29)
+### docker-compose.yml in folder [ex29](ex29)
 ### NOTE: define db password!
 
 Removed nginx so that the message buttons worked. Database persists in dir under my home dir.  
@@ -162,7 +162,7 @@ Removed nginx so that the message buttons worked. Database persists in dir under
 ## Excercise 2.10
 [Up](#excercises)
 
-### Dockerfiles in folders [ex210](ex210) [ex210/backend](ex210/backend) [ex210/frontend](ex210/frontend)
+### docker-compose.yml and Dockerfiles in folders [ex210](ex210) [ex210/backend](ex210/backend) [ex210/frontend](ex210/frontend)
 ### NOTE: define db password!
 
 Added nginx back to config, edited backend/frontend Dockerfiles to exclude port definitions from  
