@@ -168,7 +168,7 @@ Removed nginx so that the message buttons worked. Database persists in dir under
 Added nginx back to config, edited backend/frontend Dockerfiles to exclude port definitions from  
 backend/frontend URLs, and rebuilt backend/frontend images. 
 
-[Image](#ex210/browser-ex210.png) to prove it is working.
+[Image](ex210/browser-ex210.png) to prove it is working.
 
 
 
